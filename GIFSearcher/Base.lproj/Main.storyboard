@@ -65,7 +65,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="GIF Searcher" id="lUf-kM-GUP"/>
                     <connections>
-                        <segue destination="3tk-5k-gIT" kind="show" id="knN-1W-pXr"/>
+                        <segue destination="3tk-5k-gIT" kind="show" identifier="showDetail" id="knN-1W-pXr"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qo3-TS-TPj" userLabel="First Responder" sceneMemberID="firstResponder"/>

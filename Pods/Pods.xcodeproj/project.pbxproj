@@ -1,0 +1,641 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0BF1D88239677B7698ED7C8F915465A3 /* AXCGiphyImageOriginal.m in Sources */ = {isa = PBXBuildFile; fileRef = C368343C35BDE13A43D9E900BCD2702F /* AXCGiphyImageOriginal.m */; };
+		2CB90A2498B5CBB8BBED0EA8BD06163E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5791E7A42C13C688BABC18485C2CF6F5 /* Foundation.framework */; };
+		2E97FE3C3B03CBED77973E7199ADA2B8 /* AXCGiphyImageFixed.h in Headers */ = {isa = PBXBuildFile; fileRef = 6040708DA521A26028009D8A26DD22A9 /* AXCGiphyImageFixed.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		34E44C9CF6B3FEEE14A1A8774D2B072F /* AXCGiphyImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E202F5F9E0A2758A2F3251F3552C058 /* AXCGiphyImage.m */; };
+		43DAC0673B961635CB2091B93B01456A /* AXCGiphyImageDownsampled.m in Sources */ = {isa = PBXBuildFile; fileRef = 9947733BAB8B86BD19CAAE4521735463 /* AXCGiphyImageDownsampled.m */; };
+		4D72438ED0026027ED03F71A83232CE7 /* AXCGiphyImageFixed.m in Sources */ = {isa = PBXBuildFile; fileRef = 345923DB493DA864CCD0F9AD76303F63 /* AXCGiphyImageFixed.m */; };
+		542AC671A670FEE603A5B1F539639803 /* AXCGiphyImageDownsampled.h in Headers */ = {isa = PBXBuildFile; fileRef = 6CC69E681486F2E8BDE9738B474A940A /* AXCGiphyImageDownsampled.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		67DE570D3BCBADB16C2749D472566770 /* AFNetworking-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FC25B6302285AAAAB807E13A94C0AE2 /* AFNetworking-dummy.m */; };
+		79C8A519D41EAB667C14CF49496DA839 /* AFURLRequestSerialization.h in Headers */ = {isa = PBXBuildFile; fileRef = 271CEA99F5AD35AFEA48D14A5A93C232 /* AFURLRequestSerialization.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		8990CA0A0FA74296CDBCC45A2220D59A /* Pods-GIFSearcher-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 05324F1784624B26B96C8B0A3244FD08 /* Pods-GIFSearcher-dummy.m */; };
+		8E52CD4F8DFC4BEA2D326378917CF07A /* AXCGiphyImage.h in Headers */ = {isa = PBXBuildFile; fileRef = D0C038A01BE3A1A4A4CD82F45D60D5AB /* AXCGiphyImage.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9E3171D11E72D10AEDBCF7D659C7EE3D /* AFURLResponseSerialization.h in Headers */ = {isa = PBXBuildFile; fileRef = 196475E326AAD629BD39E5A5C4BADA4A /* AFURLResponseSerialization.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A08CE5412C61D1FD9E4FEDCB4CA730E9 /* Giphy-iOS-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = C16CBD03ECC40CE2CDA5A40906B8D718 /* Giphy-iOS-dummy.m */; };
+		B5A2130E674C9CADDF96A29D5B082EF0 /* AXCGiphy.h in Headers */ = {isa = PBXBuildFile; fileRef = ED7ACDB3B18CC4AEC4BA333E7B54FB5A /* AXCGiphy.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C896453931F7A63F41AB77E343F06BB3 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C451C7CC66162A8D1E8A1CEA87654B0 /* CoreGraphics.framework */; };
+		CF4B766BBDFDC0563FD515033D3B3417 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5791E7A42C13C688BABC18485C2CF6F5 /* Foundation.framework */; };
+		D4AF14AA032644FCDFA5E31716C0DB4B /* AFURLResponseSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = 1394F95E4158383888C8B137C41851C2 /* AFURLResponseSerialization.m */; };
+		D8A034966B880D74549FF0B99DD59F1A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5791E7A42C13C688BABC18485C2CF6F5 /* Foundation.framework */; };
+		DC012BF0FE4E64F03483EA0A6B258FE0 /* AXCGiphyImageOriginal.h in Headers */ = {isa = PBXBuildFile; fileRef = C546C1677DEA03CDB0E1F3458EC66F02 /* AXCGiphyImageOriginal.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EBF221C5C3ADA8AB540DD02556D9D1EA /* AFURLRequestSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = A1E6BCDD67E46C06DAEC8C21711AD9E6 /* AFURLRequestSerialization.m */; };
+		F094CFC91D8E6E3EAD2D1FE0ECA4DCAE /* AXCGiphy.m in Sources */ = {isa = PBXBuildFile; fileRef = E604FC255165F40453EFB64EFAC060B7 /* AXCGiphy.m */; };
+		F23763692FB8006B34D4C2509F1D4678 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8AC5F317069323A8BC3FCB3CFD2EA049 /* MobileCoreServices.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		90CCFB999C5E497C176C49D044BE3975 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 34A2F62255BEF1F1BF9AC4A9045556D0;
+			remoteInfo = "Giphy-iOS";
+		};
+		B1B0BD3746B4A6048E90FC7E18660C3B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4BDA044AECE6E1C8F4A991E6866614FB;
+			remoteInfo = AFNetworking;
+		};
+		D69881C3B63BCC8B119198EA7445238A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4BDA044AECE6E1C8F4A991E6866614FB;
+			remoteInfo = AFNetworking;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		05324F1784624B26B96C8B0A3244FD08 /* Pods-GIFSearcher-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-GIFSearcher-dummy.m"; sourceTree = "<group>"; };
+		0C451C7CC66162A8D1E8A1CEA87654B0 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.0.sdk/System/Library/Frameworks/CoreGraphics.framework; sourceTree = DEVELOPER_DIR; };
+		0E2A06799080FDF358DD689396032ED1 /* AFNetworking.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = AFNetworking.xcconfig; sourceTree = "<group>"; };
+		1394F95E4158383888C8B137C41851C2 /* AFURLResponseSerialization.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AFURLResponseSerialization.m; path = AFNetworking/AFURLResponseSerialization.m; sourceTree = "<group>"; };
+		196475E326AAD629BD39E5A5C4BADA4A /* AFURLResponseSerialization.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AFURLResponseSerialization.h; path = AFNetworking/AFURLResponseSerialization.h; sourceTree = "<group>"; };
+		1E202F5F9E0A2758A2F3251F3552C058 /* AXCGiphyImage.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AXCGiphyImage.m; path = Pod/Classes/AXCGiphyImage.m; sourceTree = "<group>"; };
+		204E07704B672ED58B826045879E7B9E /* Giphy-iOS.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Giphy-iOS.xcconfig"; sourceTree = "<group>"; };
+		271CEA99F5AD35AFEA48D14A5A93C232 /* AFURLRequestSerialization.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AFURLRequestSerialization.h; path = AFNetworking/AFURLRequestSerialization.h; sourceTree = "<group>"; };
+		345923DB493DA864CCD0F9AD76303F63 /* AXCGiphyImageFixed.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AXCGiphyImageFixed.m; path = Pod/Classes/AXCGiphyImageFixed.m; sourceTree = "<group>"; };
+		3FC25B6302285AAAAB807E13A94C0AE2 /* AFNetworking-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "AFNetworking-dummy.m"; sourceTree = "<group>"; };
+		4978CAF03BAB9E4EEED302F43719DD5B /* Pods-GIFSearcher.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-GIFSearcher.release.xcconfig"; sourceTree = "<group>"; };
+		5791E7A42C13C688BABC18485C2CF6F5 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		6040708DA521A26028009D8A26DD22A9 /* AXCGiphyImageFixed.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AXCGiphyImageFixed.h; path = Pod/Classes/AXCGiphyImageFixed.h; sourceTree = "<group>"; };
+		63E799A6EB8B447D1FA972EFD1FCDAD5 /* libAFNetworking.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libAFNetworking.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		686230787FFD66C1BF0FCEA48F4BA13E /* Pods-GIFSearcher-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-GIFSearcher-frameworks.sh"; sourceTree = "<group>"; };
+		6CC69E681486F2E8BDE9738B474A940A /* AXCGiphyImageDownsampled.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AXCGiphyImageDownsampled.h; path = Pod/Classes/AXCGiphyImageDownsampled.h; sourceTree = "<group>"; };
+		78363C5AC3F95870220F0E74E2848B91 /* Giphy-iOS-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Giphy-iOS-prefix.pch"; sourceTree = "<group>"; };
+		82945695632A2BB6FFB260E89B963708 /* AFNetworking-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "AFNetworking-prefix.pch"; sourceTree = "<group>"; };
+		8701EBE37BE34C39F64D9AA1F6433267 /* Pods-GIFSearcher.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-GIFSearcher.debug.xcconfig"; sourceTree = "<group>"; };
+		8A69F9032FE8FE66898DF48F79114128 /* Pods-GIFSearcher-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-GIFSearcher-acknowledgements.markdown"; sourceTree = "<group>"; };
+		8AC5F317069323A8BC3FCB3CFD2EA049 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.0.sdk/System/Library/Frameworks/MobileCoreServices.framework; sourceTree = DEVELOPER_DIR; };
+		9947733BAB8B86BD19CAAE4521735463 /* AXCGiphyImageDownsampled.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AXCGiphyImageDownsampled.m; path = Pod/Classes/AXCGiphyImageDownsampled.m; sourceTree = "<group>"; };
+		A1E6BCDD67E46C06DAEC8C21711AD9E6 /* AFURLRequestSerialization.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AFURLRequestSerialization.m; path = AFNetworking/AFURLRequestSerialization.m; sourceTree = "<group>"; };
+		A4D295F73A303C4E52803E4D9118AA25 /* libPods-GIFSearcher.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-GIFSearcher.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A594BBA4C40C17C572BC7560955A44B5 /* Pods-GIFSearcher-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-GIFSearcher-acknowledgements.plist"; sourceTree = "<group>"; };
+		BA6428E9F66FD5A23C0A2E06ED26CD2F /* Podfile */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		C16CBD03ECC40CE2CDA5A40906B8D718 /* Giphy-iOS-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Giphy-iOS-dummy.m"; sourceTree = "<group>"; };
+		C368343C35BDE13A43D9E900BCD2702F /* AXCGiphyImageOriginal.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AXCGiphyImageOriginal.m; path = Pod/Classes/AXCGiphyImageOriginal.m; sourceTree = "<group>"; };
+		C546C1677DEA03CDB0E1F3458EC66F02 /* AXCGiphyImageOriginal.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AXCGiphyImageOriginal.h; path = Pod/Classes/AXCGiphyImageOriginal.h; sourceTree = "<group>"; };
+		C7CEDFA3F43C86B9BE7C7107B4D300FF /* libGiphy-iOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libGiphy-iOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CD7BC00A6A03DE3038427BA13EFC6EDB /* Pods-GIFSearcher-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-GIFSearcher-resources.sh"; sourceTree = "<group>"; };
+		D0C038A01BE3A1A4A4CD82F45D60D5AB /* AXCGiphyImage.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AXCGiphyImage.h; path = Pod/Classes/AXCGiphyImage.h; sourceTree = "<group>"; };
+		E604FC255165F40453EFB64EFAC060B7 /* AXCGiphy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AXCGiphy.m; path = Pod/Classes/AXCGiphy.m; sourceTree = "<group>"; };
+		ED7ACDB3B18CC4AEC4BA333E7B54FB5A /* AXCGiphy.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AXCGiphy.h; path = Pod/Classes/AXCGiphy.h; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		6E36DD0367EA91140ADA17AF63AEB738 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2CB90A2498B5CBB8BBED0EA8BD06163E /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C89D425D7567D5078F883242C2425325 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D8A034966B880D74549FF0B99DD59F1A /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D84ABA2446524B3613B4BBF3E75EE8BC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C896453931F7A63F41AB77E343F06BB3 /* CoreGraphics.framework in Frameworks */,
+				CF4B766BBDFDC0563FD515033D3B3417 /* Foundation.framework in Frameworks */,
+				F23763692FB8006B34D4C2509F1D4678 /* MobileCoreServices.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		122DA2E5084A4393C29BE363C764795C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C01D5FC3747EA14A2277439B0B7AE05B /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		27FC8F41EE5BE988748C3D396A535294 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				0E2A06799080FDF358DD689396032ED1 /* AFNetworking.xcconfig */,
+				3FC25B6302285AAAAB807E13A94C0AE2 /* AFNetworking-dummy.m */,
+				82945695632A2BB6FFB260E89B963708 /* AFNetworking-prefix.pch */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/AFNetworking";
+			sourceTree = "<group>";
+		};
+		2E2138C2C1237FBE641B00A7B002E232 /* Giphy-iOS */ = {
+			isa = PBXGroup;
+			children = (
+				ED7ACDB3B18CC4AEC4BA333E7B54FB5A /* AXCGiphy.h */,
+				E604FC255165F40453EFB64EFAC060B7 /* AXCGiphy.m */,
+				D0C038A01BE3A1A4A4CD82F45D60D5AB /* AXCGiphyImage.h */,
+				1E202F5F9E0A2758A2F3251F3552C058 /* AXCGiphyImage.m */,
+				6CC69E681486F2E8BDE9738B474A940A /* AXCGiphyImageDownsampled.h */,
+				9947733BAB8B86BD19CAAE4521735463 /* AXCGiphyImageDownsampled.m */,
+				6040708DA521A26028009D8A26DD22A9 /* AXCGiphyImageFixed.h */,
+				345923DB493DA864CCD0F9AD76303F63 /* AXCGiphyImageFixed.m */,
+				C546C1677DEA03CDB0E1F3458EC66F02 /* AXCGiphyImageOriginal.h */,
+				C368343C35BDE13A43D9E900BCD2702F /* AXCGiphyImageOriginal.m */,
+				BC908FEEBBF677D86E170268203E2536 /* Support Files */,
+			);
+			path = "Giphy-iOS";
+			sourceTree = "<group>";
+		};
+		68A046B2DAA0D9E565159E67746D858B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				63E799A6EB8B447D1FA972EFD1FCDAD5 /* libAFNetworking.a */,
+				C7CEDFA3F43C86B9BE7C7107B4D300FF /* libGiphy-iOS.a */,
+				A4D295F73A303C4E52803E4D9118AA25 /* libPods-GIFSearcher.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		7DB346D0F39D3F0E887471402A8071AB = {
+			isa = PBXGroup;
+			children = (
+				BA6428E9F66FD5A23C0A2E06ED26CD2F /* Podfile */,
+				122DA2E5084A4393C29BE363C764795C /* Frameworks */,
+				EFEC394C6572225F8874F412503E5098 /* Pods */,
+				68A046B2DAA0D9E565159E67746D858B /* Products */,
+				C66B3BA901306A0EA3D308D8F14AFF6C /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		A8288E6E383DEE66F26902FF65A9D15F /* Pods-GIFSearcher */ = {
+			isa = PBXGroup;
+			children = (
+				8A69F9032FE8FE66898DF48F79114128 /* Pods-GIFSearcher-acknowledgements.markdown */,
+				A594BBA4C40C17C572BC7560955A44B5 /* Pods-GIFSearcher-acknowledgements.plist */,
+				05324F1784624B26B96C8B0A3244FD08 /* Pods-GIFSearcher-dummy.m */,
+				686230787FFD66C1BF0FCEA48F4BA13E /* Pods-GIFSearcher-frameworks.sh */,
+				CD7BC00A6A03DE3038427BA13EFC6EDB /* Pods-GIFSearcher-resources.sh */,
+				8701EBE37BE34C39F64D9AA1F6433267 /* Pods-GIFSearcher.debug.xcconfig */,
+				4978CAF03BAB9E4EEED302F43719DD5B /* Pods-GIFSearcher.release.xcconfig */,
+			);
+			name = "Pods-GIFSearcher";
+			path = "Target Support Files/Pods-GIFSearcher";
+			sourceTree = "<group>";
+		};
+		BC908FEEBBF677D86E170268203E2536 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				204E07704B672ED58B826045879E7B9E /* Giphy-iOS.xcconfig */,
+				C16CBD03ECC40CE2CDA5A40906B8D718 /* Giphy-iOS-dummy.m */,
+				78363C5AC3F95870220F0E74E2848B91 /* Giphy-iOS-prefix.pch */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/Giphy-iOS";
+			sourceTree = "<group>";
+		};
+		C01D5FC3747EA14A2277439B0B7AE05B /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				0C451C7CC66162A8D1E8A1CEA87654B0 /* CoreGraphics.framework */,
+				5791E7A42C13C688BABC18485C2CF6F5 /* Foundation.framework */,
+				8AC5F317069323A8BC3FCB3CFD2EA049 /* MobileCoreServices.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		C66B3BA901306A0EA3D308D8F14AFF6C /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				A8288E6E383DEE66F26902FF65A9D15F /* Pods-GIFSearcher */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		CFB27C0BF55086AB73204D3F6887543F /* AFNetworking */ = {
+			isa = PBXGroup;
+			children = (
+				F2EE7AFF73C2EBBDB8816479AEEE9E13 /* Serialization */,
+				27FC8F41EE5BE988748C3D396A535294 /* Support Files */,
+			);
+			path = AFNetworking;
+			sourceTree = "<group>";
+		};
+		EFEC394C6572225F8874F412503E5098 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				CFB27C0BF55086AB73204D3F6887543F /* AFNetworking */,
+				2E2138C2C1237FBE641B00A7B002E232 /* Giphy-iOS */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		F2EE7AFF73C2EBBDB8816479AEEE9E13 /* Serialization */ = {
+			isa = PBXGroup;
+			children = (
+				271CEA99F5AD35AFEA48D14A5A93C232 /* AFURLRequestSerialization.h */,
+				A1E6BCDD67E46C06DAEC8C21711AD9E6 /* AFURLRequestSerialization.m */,
+				196475E326AAD629BD39E5A5C4BADA4A /* AFURLResponseSerialization.h */,
+				1394F95E4158383888C8B137C41851C2 /* AFURLResponseSerialization.m */,
+			);
+			name = Serialization;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		11850780452AD800E73F51C2A81C1C6E /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B5A2130E674C9CADDF96A29D5B082EF0 /* AXCGiphy.h in Headers */,
+				8E52CD4F8DFC4BEA2D326378917CF07A /* AXCGiphyImage.h in Headers */,
+				542AC671A670FEE603A5B1F539639803 /* AXCGiphyImageDownsampled.h in Headers */,
+				2E97FE3C3B03CBED77973E7199ADA2B8 /* AXCGiphyImageFixed.h in Headers */,
+				DC012BF0FE4E64F03483EA0A6B258FE0 /* AXCGiphyImageOriginal.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DA342E3A500DDE26308517F0B6CA74BB /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				79C8A519D41EAB667C14CF49496DA839 /* AFURLRequestSerialization.h in Headers */,
+				9E3171D11E72D10AEDBCF7D659C7EE3D /* AFURLResponseSerialization.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		34A2F62255BEF1F1BF9AC4A9045556D0 /* Giphy-iOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 17660C7767072B43E1D1E5219C019115 /* Build configuration list for PBXNativeTarget "Giphy-iOS" */;
+			buildPhases = (
+				B60BDEA2EACBB282FE124285FCD46AB7 /* Sources */,
+				6E36DD0367EA91140ADA17AF63AEB738 /* Frameworks */,
+				11850780452AD800E73F51C2A81C1C6E /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B0485EBF51EF9A4E46B3E7DCDA85E248 /* PBXTargetDependency */,
+			);
+			name = "Giphy-iOS";
+			productName = "Giphy-iOS";
+			productReference = C7CEDFA3F43C86B9BE7C7107B4D300FF /* libGiphy-iOS.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		4BDA044AECE6E1C8F4A991E6866614FB /* AFNetworking */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9239BE241332F1928C8C85C2496819C7 /* Build configuration list for PBXNativeTarget "AFNetworking" */;
+			buildPhases = (
+				0B3FFB3A6AE1D00D8EE1177E8FA82371 /* Sources */,
+				D84ABA2446524B3613B4BBF3E75EE8BC /* Frameworks */,
+				DA342E3A500DDE26308517F0B6CA74BB /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = AFNetworking;
+			productName = AFNetworking;
+			productReference = 63E799A6EB8B447D1FA972EFD1FCDAD5 /* libAFNetworking.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		570A7C6E9D095757A46C423CD7D9068C /* Pods-GIFSearcher */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 83EA51540B8E8E093B10BFD7E7FF9818 /* Build configuration list for PBXNativeTarget "Pods-GIFSearcher" */;
+			buildPhases = (
+				333AAB67E22F940C2103AE079B44886D /* Sources */,
+				C89D425D7567D5078F883242C2425325 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1ACFC2DC57E4A2E1C220329122BF694A /* PBXTargetDependency */,
+				584DB7E64D52B325E17A776643206D1D /* PBXTargetDependency */,
+			);
+			name = "Pods-GIFSearcher";
+			productName = "Pods-GIFSearcher";
+			productReference = A4D295F73A303C4E52803E4D9118AA25 /* libPods-GIFSearcher.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D41D8CD98F00B204E9800998ECF8427E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0700;
+				LastUpgradeCheck = 0700;
+			};
+			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
+			productRefGroup = 68A046B2DAA0D9E565159E67746D858B /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				4BDA044AECE6E1C8F4A991E6866614FB /* AFNetworking */,
+				34A2F62255BEF1F1BF9AC4A9045556D0 /* Giphy-iOS */,
+				570A7C6E9D095757A46C423CD7D9068C /* Pods-GIFSearcher */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		0B3FFB3A6AE1D00D8EE1177E8FA82371 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				67DE570D3BCBADB16C2749D472566770 /* AFNetworking-dummy.m in Sources */,
+				EBF221C5C3ADA8AB540DD02556D9D1EA /* AFURLRequestSerialization.m in Sources */,
+				D4AF14AA032644FCDFA5E31716C0DB4B /* AFURLResponseSerialization.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		333AAB67E22F940C2103AE079B44886D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8990CA0A0FA74296CDBCC45A2220D59A /* Pods-GIFSearcher-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B60BDEA2EACBB282FE124285FCD46AB7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F094CFC91D8E6E3EAD2D1FE0ECA4DCAE /* AXCGiphy.m in Sources */,
+				34E44C9CF6B3FEEE14A1A8774D2B072F /* AXCGiphyImage.m in Sources */,
+				43DAC0673B961635CB2091B93B01456A /* AXCGiphyImageDownsampled.m in Sources */,
+				4D72438ED0026027ED03F71A83232CE7 /* AXCGiphyImageFixed.m in Sources */,
+				0BF1D88239677B7698ED7C8F915465A3 /* AXCGiphyImageOriginal.m in Sources */,
+				A08CE5412C61D1FD9E4FEDCB4CA730E9 /* Giphy-iOS-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		1ACFC2DC57E4A2E1C220329122BF694A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = AFNetworking;
+			target = 4BDA044AECE6E1C8F4A991E6866614FB /* AFNetworking */;
+			targetProxy = B1B0BD3746B4A6048E90FC7E18660C3B /* PBXContainerItemProxy */;
+		};
+		584DB7E64D52B325E17A776643206D1D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Giphy-iOS";
+			target = 34A2F62255BEF1F1BF9AC4A9045556D0 /* Giphy-iOS */;
+			targetProxy = 90CCFB999C5E497C176C49D044BE3975 /* PBXContainerItemProxy */;
+		};
+		B0485EBF51EF9A4E46B3E7DCDA85E248 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = AFNetworking;
+			target = 4BDA044AECE6E1C8F4A991E6866614FB /* AFNetworking */;
+			targetProxy = D69881C3B63BCC8B119198EA7445238A /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		0BAA94E2131F43F472ECBCEEA422382B /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 204E07704B672ED58B826045879E7B9E /* Giphy-iOS.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Giphy-iOS/Giphy-iOS-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		282A074FCE95C748F20C93F9130927EB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0E2A06799080FDF358DD689396032ED1 /* AFNetworking.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/AFNetworking/AFNetworking-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		38AD8CA3D785CF2AE2E508A80EEF2672 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8701EBE37BE34C39F64D9AA1F6433267 /* Pods-GIFSearcher.debug.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MACH_O_TYPE = staticlib;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		9E712C00253B79880CEAA700F62A4145 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 204E07704B672ED58B826045879E7B9E /* Giphy-iOS.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Giphy-iOS/Giphy-iOS-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		A70CDAD61F90AC503C7D04CC22DA2923 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				ONLY_ACTIVE_ARCH = YES;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		C3F5A909060367B1890F594D3BE8EAAC /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4978CAF03BAB9E4EEED302F43719DD5B /* Pods-GIFSearcher.release.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MACH_O_TYPE = staticlib;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		F8B3E45B02FD6DAC9261EAFC10519A1D /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0E2A06799080FDF358DD689396032ED1 /* AFNetworking.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/AFNetworking/AFNetworking-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		FB45FFD90572718D82AB9092B750F0CA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PREPROCESSOR_DEFINITIONS = "RELEASE=1";
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		17660C7767072B43E1D1E5219C019115 /* Build configuration list for PBXNativeTarget "Giphy-iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9E712C00253B79880CEAA700F62A4145 /* Debug */,
+				0BAA94E2131F43F472ECBCEEA422382B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A70CDAD61F90AC503C7D04CC22DA2923 /* Debug */,
+				FB45FFD90572718D82AB9092B750F0CA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		83EA51540B8E8E093B10BFD7E7FF9818 /* Build configuration list for PBXNativeTarget "Pods-GIFSearcher" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				38AD8CA3D785CF2AE2E508A80EEF2672 /* Debug */,
+				C3F5A909060367B1890F594D3BE8EAAC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9239BE241332F1928C8C85C2496819C7 /* Build configuration list for PBXNativeTarget "AFNetworking" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				282A074FCE95C748F20C93F9130927EB /* Debug */,
+				F8B3E45B02FD6DAC9261EAFC10519A1D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+}
