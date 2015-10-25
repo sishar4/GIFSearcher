@@ -1,25 +1,95 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="NAD-9E-kOT">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="tne-QT-ifu">
+        <!--Navigation Controller-->
+        <scene sceneID="V6V-sD-b6p">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="" sceneMemberID="viewController">
+                <navigationController id="NAD-9E-kOT" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="EHV-dy-WOY">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <animations/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="cZv-gY-fEr" kind="relationship" relationship="rootViewController" id="LIw-QR-UXZ"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FKj-OH-hrQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-640" y="-2"/>
+        </scene>
+        <!--GIF Searcher-->
+        <scene sceneID="Orr-rv-LP5">
+            <objects>
+                <viewController id="cZv-gY-fEr" customClass="ViewController" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
-                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                        <viewControllerLayoutGuide type="top" id="CLr-LX-jFr"/>
+                        <viewControllerLayoutGuide type="bottom" id="QXN-9y-3hv"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                    <view key="view" contentMode="scaleToFill" id="jua-Pp-CQG">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <subviews>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="Xqt-Vv-Jmb">
+                                <rect key="frame" x="0.0" y="64" width="600" height="44"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="bIb-56-emD"/>
+                                </constraints>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="aHe-ak-BSV">
+                                <rect key="frame" x="0.0" y="108" width="600" height="492"/>
+                                <animations/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="aHe-ak-BSV" secondAttribute="trailing" id="E7m-if-WX9"/>
+                            <constraint firstItem="Xqt-Vv-Jmb" firstAttribute="top" secondItem="CLr-LX-jFr" secondAttribute="bottom" id="Jzr-NJ-emH"/>
+                            <constraint firstItem="aHe-ak-BSV" firstAttribute="leading" secondItem="jua-Pp-CQG" secondAttribute="leading" id="OW0-82-6NP"/>
+                            <constraint firstItem="aHe-ak-BSV" firstAttribute="top" secondItem="Xqt-Vv-Jmb" secondAttribute="bottom" id="QlU-30-H3Z"/>
+                            <constraint firstItem="aHe-ak-BSV" firstAttribute="top" secondItem="Xqt-Vv-Jmb" secondAttribute="bottom" id="RiK-6Z-BFh"/>
+                            <constraint firstItem="Xqt-Vv-Jmb" firstAttribute="leading" secondItem="jua-Pp-CQG" secondAttribute="leading" id="TjO-Lo-jjY"/>
+                            <constraint firstItem="Xqt-Vv-Jmb" firstAttribute="centerX" secondItem="jua-Pp-CQG" secondAttribute="centerX" id="YcE-B3-awm"/>
+                            <constraint firstItem="QXN-9y-3hv" firstAttribute="top" secondItem="aHe-ak-BSV" secondAttribute="bottom" id="Z5Y-nr-r5H"/>
+                            <constraint firstItem="aHe-ak-BSV" firstAttribute="centerX" secondItem="jua-Pp-CQG" secondAttribute="centerX" id="ZWL-gx-em9"/>
+                            <constraint firstAttribute="trailing" secondItem="Xqt-Vv-Jmb" secondAttribute="trailing" id="cDg-uY-0pK"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="GIF Searcher" id="lUf-kM-GUP"/>
+                    <connections>
+                        <segue destination="3tk-5k-gIT" kind="show" id="knN-1W-pXr"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Qo3-TS-TPj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="221" y="-2"/>
+        </scene>
+        <!--Detail View Controller-->
+        <scene sceneID="HNw-za-RBQ">
+            <objects>
+                <viewController id="3tk-5k-gIT" customClass="GIFDetailViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="RK5-qu-cAJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="Udn-Xq-UMr"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="hZU-Es-bsP">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="n5j-wt-FNN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="941" y="-2"/>
         </scene>
     </scenes>
 </document>
