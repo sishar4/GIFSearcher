@@ -1,7 +1,6 @@
 # GIFSearcher
 
 App that shows trending GIF's using Giphy API.
-
 User can search and share GIF's.
 
 To Install:
