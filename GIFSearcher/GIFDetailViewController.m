@@ -10,4 +10,13 @@
 
 @implementation GIFDetailViewController
 
+- (IBAction)shareGIF:(id)sender
+{
+    //Share GIF url
+    NSMutableArray *packet = [[NSMutableArray alloc] initWithObjects:@"", nil];
+    
+    UIActivityViewController *activityController = [[UIActivityViewController alloc] initWithActivityItems:packet applicationActivities:nil];
+    [self presentViewController:activityController animated:YES completion:nil];
+}
+
 @end

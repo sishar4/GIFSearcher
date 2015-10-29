@@ -10,4 +10,6 @@
 
 @interface GIFDetailViewController : UIViewController
 
+- (IBAction)shareGIF:(id)sender;
+
 @end

@@ -8,7 +8,9 @@
         <!--Navigation Controller-->
         <scene sceneID="V6V-sD-b6p">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FKj-OH-hrQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController id="NAD-9E-kOT" sceneMemberID="viewController">
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="EHV-dy-WOY">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -18,9 +20,8 @@
                         <segue destination="cZv-gY-fEr" kind="relationship" relationship="rootViewController" id="LIw-QR-UXZ"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="FKj-OH-hrQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-640" y="-2"/>
+            <point key="canvasLocation" x="-596" y="-56"/>
         </scene>
         <!--GIF Searcher-->
         <scene sceneID="Orr-rv-LP5">
@@ -63,33 +64,42 @@
                             <constraint firstAttribute="trailing" secondItem="Xqt-Vv-Jmb" secondAttribute="trailing" id="cDg-uY-0pK"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="GIF Searcher" id="lUf-kM-GUP"/>
+                    <navigationItem key="navigationItem" title="GIF Searcher" id="lUf-kM-GUP">
+                        <barButtonItem key="backBarButtonItem" title="Back" id="a77-8d-eWt"/>
+                    </navigationItem>
                     <connections>
-                        <segue destination="3tk-5k-gIT" kind="show" identifier="showDetail" id="knN-1W-pXr"/>
+                        <segue destination="HCm-Qw-7Ob" kind="show" identifier="showGifDetail" id="gPJ-8n-OE2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qo3-TS-TPj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="221" y="-2"/>
+            <point key="canvasLocation" x="229" y="-56"/>
         </scene>
-        <!--Detail View Controller-->
-        <scene sceneID="HNw-za-RBQ">
+        <!--GIF Detail-->
+        <scene sceneID="7fH-BS-udf">
             <objects>
-                <viewController id="3tk-5k-gIT" customClass="GIFDetailViewController" sceneMemberID="viewController">
+                <viewController id="HCm-Qw-7Ob" customClass="GIFDetailViewController" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="RK5-qu-cAJ"/>
-                        <viewControllerLayoutGuide type="bottom" id="Udn-Xq-UMr"/>
+                        <viewControllerLayoutGuide type="top" id="bIc-eJ-0a5"/>
+                        <viewControllerLayoutGuide type="bottom" id="die-HT-Dvb"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="hZU-Es-bsP">
+                    <view key="view" contentMode="scaleToFill" id="z0G-Wf-7FX">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" title="GIF Detail" id="577-gM-cLi">
+                        <barButtonItem key="rightBarButtonItem" systemItem="action" id="Mze-2Z-wsd">
+                            <connections>
+                                <action selector="shareGIF:" destination="HCm-Qw-7Ob" id="qp8-0K-pkW"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="n5j-wt-FNN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JtT-ER-29q" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="941" y="-2"/>
+            <point key="canvasLocation" x="1068" y="-56"/>
         </scene>
     </scenes>
 </document>

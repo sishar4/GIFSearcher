@@ -20,6 +20,20 @@
                ReferencedContainer = "container:GIFSearcher.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "57CA7206BFA0B6178F2D36CFA3A68171"
+               BuildableName = "Pods_GIFSearcher.framework"
+               BlueprintName = "Pods-GIFSearcher"
+               ReferencedContainer = "container:Pods/Pods.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
       </BuildActionEntries>
    </BuildAction>
    <TestAction
