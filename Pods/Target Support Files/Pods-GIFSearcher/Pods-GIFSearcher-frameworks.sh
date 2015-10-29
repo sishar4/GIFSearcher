@@ -82,3 +82,16 @@ strip_invalid_archs() {
   fi
 }
 
+
+if [[ "$CONFIGURATION" == "Debug" ]]; then
+  install_framework "Pods-GIFSearcher/AFNetworking.framework"
+  install_framework "Pods-GIFSearcher/Giphy_iOS.framework"
+  install_framework "Pods-GIFSearcher/ReactiveCocoa.framework"
+  install_framework "Pods-GIFSearcher/Result.framework"
+fi
+if [[ "$CONFIGURATION" == "Release" ]]; then
+  install_framework "Pods-GIFSearcher/AFNetworking.framework"
+  install_framework "Pods-GIFSearcher/Giphy_iOS.framework"
+  install_framework "Pods-GIFSearcher/ReactiveCocoa.framework"
+  install_framework "Pods-GIFSearcher/Result.framework"
+fi

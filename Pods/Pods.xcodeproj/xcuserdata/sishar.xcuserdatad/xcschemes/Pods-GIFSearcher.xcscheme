@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = 'E3B186D30AA666DF2D2A1164'
+               BlueprintIdentifier = '017007B6BE4758B05B847A20'
                BlueprintName = 'Pods-GIFSearcher'
                ReferencedContainer = 'container:Pods.xcodeproj'
-               BuildableName = 'libPods-GIFSearcher.a'>
+               BuildableName = 'Pods_GIFSearcher.framework'>
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>

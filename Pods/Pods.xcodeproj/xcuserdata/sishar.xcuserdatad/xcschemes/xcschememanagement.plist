@@ -19,20 +19,40 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>ReactiveCocoa.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Result.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>34A2F62255BEF1F1BF9AC4A9045556D0</key>
+		<key>3FD6D59A634D2E2E0FB56A016948B932</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>4BDA044AECE6E1C8F4A991E6866614FB</key>
+		<key>57CA7206BFA0B6178F2D36CFA3A68171</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>570A7C6E9D095757A46C423CD7D9068C</key>
+		<key>A89CB48A4BF38FF7440119A2CE2174C5</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>B333D3A2165966BF5FA8C4007ED76E7B</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>C1785E7213746503EC7CA7F3FAFDAE7A</key>
 		<dict>
 			<key>primary</key>
 			<true/>
