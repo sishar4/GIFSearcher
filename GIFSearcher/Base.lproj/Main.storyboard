@@ -8,7 +8,6 @@
         <!--Navigation Controller-->
         <scene sceneID="V6V-sD-b6p">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="FKj-OH-hrQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController id="NAD-9E-kOT" sceneMemberID="viewController">
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="EHV-dy-WOY">
@@ -20,6 +19,7 @@
                         <segue destination="cZv-gY-fEr" kind="relationship" relationship="rootViewController" id="LIw-QR-UXZ"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FKj-OH-hrQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-596" y="-56"/>
         </scene>
@@ -79,6 +79,11 @@
                             <constraint firstItem="aHe-ak-BSV" firstAttribute="centerX" secondItem="jua-Pp-CQG" secondAttribute="centerX" id="ZWL-gx-em9"/>
                             <constraint firstAttribute="trailing" secondItem="Xqt-Vv-Jmb" secondAttribute="trailing" id="cDg-uY-0pK"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="RiK-6Z-BFh"/>
+                            </mask>
+                        </variation>
                     </view>
                     <navigationItem key="navigationItem" title="GIF Searcher" id="lUf-kM-GUP">
                         <barButtonItem key="backBarButtonItem" title="Back" id="a77-8d-eWt"/>
@@ -104,7 +109,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <webView contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="Caa-Pp-OVX">
+                            <webView contentMode="scaleAspectFit" scalesPageToFit="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Caa-Pp-OVX">
                                 <rect key="frame" x="0.0" y="64" width="600" height="300"/>
                                 <animations/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -120,6 +125,11 @@
                                 <variation key="heightClass=regular">
                                     <mask key="constraints">
                                         <include reference="pHx-42-1c9"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=compact-widthClass=regular">
+                                    <mask key="constraints">
+                                        <exclude reference="jw8-0S-sgm"/>
                                     </mask>
                                 </variation>
                             </webView>

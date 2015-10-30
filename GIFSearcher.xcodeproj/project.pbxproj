@@ -114,6 +114,17 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		FA32B0FE1BE41CE400FEF868 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				FA54813B1BDC6A8E00F7DE51 /* ViewController.h */,
+				FA54813C1BDC6A8E00F7DE51 /* ViewController.m */,
+				FA5481681BDC6C2600F7DE51 /* GIFDetailViewController.h */,
+				FA5481691BDC6C2600F7DE51 /* GIFDetailViewController.m */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
 		FA5481291BDC6A8E00F7DE51 = {
 			isa = PBXGroup;
 			children = (
@@ -141,10 +152,7 @@
 			children = (
 				FA5481381BDC6A8E00F7DE51 /* AppDelegate.h */,
 				FA5481391BDC6A8E00F7DE51 /* AppDelegate.m */,
-				FA54813B1BDC6A8E00F7DE51 /* ViewController.h */,
-				FA54813C1BDC6A8E00F7DE51 /* ViewController.m */,
-				FA5481681BDC6C2600F7DE51 /* GIFDetailViewController.h */,
-				FA5481691BDC6C2600F7DE51 /* GIFDetailViewController.m */,
+				FA32B0FE1BE41CE400FEF868 /* Controllers */,
 				FAD1982B1BE3264100375856 /* Views */,
 				FAD1982E1BE3269400375856 /* Custom Objects */,
 				FA54813E1BDC6A8E00F7DE51 /* Main.storyboard */,

@@ -39,8 +39,16 @@
             
             for (NSDictionary *dict in gifData) {
                 NSDictionary *imageDict = [dict objectForKey:@"images"];
-                NSDictionary *imgDict = [imageDict objectForKey:@"fixed_height_still"];
-                NSDictionary *gifDict = [imageDict objectForKey:@"fixed_height"];
+                NSDictionary *imgDict;
+                NSDictionary *gifDict;
+                if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+                    imgDict = [imageDict objectForKey:@"original_still"];
+                    gifDict = [imageDict objectForKey:@"original"];
+                } else {
+                    imgDict = [imageDict objectForKey:@"fixed_height_still"];
+                    gifDict = [imageDict objectForKey:@"fixed_height"];
+                }
+                
                 
                 NSDictionary *gifs = [[NSDictionary alloc] initWithObjects:@[imgDict, gifDict] forKeys:@[@"image", @"gif"]];
                 [self.gifsArray addObject:gifs];
@@ -123,7 +131,11 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 200.0;
+    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+        return 304.0;
+    } else {
+        return 200.0;
+    }
 }
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
