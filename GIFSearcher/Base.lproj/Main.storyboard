@@ -46,7 +46,23 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="aHe-ak-BSV">
                                 <rect key="frame" x="0.0" y="108" width="600" height="492"/>
                                 <animations/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cellIdentifier" id="jxc-oA-edI">
+                                        <rect key="frame" x="0.0" y="28" width="600" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="jxc-oA-edI" id="CSn-Q4-Tjr">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <animations/>
+                                        </tableViewCellContentView>
+                                        <animations/>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="cZv-gY-fEr" id="8db-mt-m4b"/>
+                                    <outlet property="delegate" destination="cZv-gY-fEr" id="OGZ-VO-j6P"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <animations/>
@@ -68,7 +84,8 @@
                         <barButtonItem key="backBarButtonItem" title="Back" id="a77-8d-eWt"/>
                     </navigationItem>
                     <connections>
-                        <segue destination="HCm-Qw-7Ob" kind="show" identifier="showGifDetail" id="gPJ-8n-OE2"/>
+                        <outlet property="tableView" destination="aHe-ak-BSV" id="4sB-0i-eVZ"/>
+                        <segue destination="HCm-Qw-7Ob" kind="show" identifier="showGIFDetail" id="gPJ-8n-OE2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qo3-TS-TPj" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -86,8 +103,67 @@
                     <view key="view" contentMode="scaleToFill" id="z0G-Wf-7FX">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="Caa-Pp-OVX">
+                                <rect key="frame" x="0.0" y="64" width="600" height="300"/>
+                                <animations/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="300" id="jw8-0S-sgm"/>
+                                    <constraint firstAttribute="height" constant="300" id="pHx-42-1c9"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="pHx-42-1c9"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular">
+                                    <mask key="constraints">
+                                        <include reference="pHx-42-1c9"/>
+                                    </mask>
+                                </variation>
+                            </webView>
+                        </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="Caa-Pp-OVX" secondAttribute="trailing" id="191-it-rYy"/>
+                            <constraint firstItem="Caa-Pp-OVX" firstAttribute="leading" secondItem="z0G-Wf-7FX" secondAttribute="leading" id="AMj-Aq-3Sa"/>
+                            <constraint firstItem="Caa-Pp-OVX" firstAttribute="leading" secondItem="z0G-Wf-7FX" secondAttribute="leading" id="Vye-4l-UM9"/>
+                            <constraint firstItem="Caa-Pp-OVX" firstAttribute="top" secondItem="bIc-eJ-0a5" secondAttribute="bottom" id="iN6-QT-D5A"/>
+                            <constraint firstItem="Caa-Pp-OVX" firstAttribute="leading" secondItem="z0G-Wf-7FX" secondAttribute="leading" id="khG-Pc-r4C"/>
+                            <constraint firstAttribute="trailing" secondItem="Caa-Pp-OVX" secondAttribute="trailing" id="mk3-ti-b0k"/>
+                            <constraint firstAttribute="trailing" secondItem="Caa-Pp-OVX" secondAttribute="trailing" id="qC6-90-66p"/>
+                            <constraint firstItem="Caa-Pp-OVX" firstAttribute="top" secondItem="bIc-eJ-0a5" secondAttribute="bottom" id="qoT-Ty-T1i"/>
+                            <constraint firstItem="Caa-Pp-OVX" firstAttribute="top" secondItem="bIc-eJ-0a5" secondAttribute="bottom" id="rOQ-Ml-rmL"/>
+                            <constraint firstItem="die-HT-Dvb" firstAttribute="top" secondItem="Caa-Pp-OVX" secondAttribute="bottom" id="wlS-nc-gKn"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="191-it-rYy"/>
+                                <exclude reference="AMj-Aq-3Sa"/>
+                                <exclude reference="iN6-QT-D5A"/>
+                                <exclude reference="khG-Pc-r4C"/>
+                                <exclude reference="qC6-90-66p"/>
+                                <exclude reference="rOQ-Ml-rmL"/>
+                                <exclude reference="wlS-nc-gKn"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular">
+                            <mask key="constraints">
+                                <include reference="191-it-rYy"/>
+                                <include reference="khG-Pc-r4C"/>
+                                <include reference="rOQ-Ml-rmL"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=regular">
+                            <mask key="constraints">
+                                <include reference="AMj-Aq-3Sa"/>
+                                <include reference="iN6-QT-D5A"/>
+                                <include reference="qC6-90-66p"/>
+                                <include reference="wlS-nc-gKn"/>
+                            </mask>
+                        </variation>
                     </view>
                     <navigationItem key="navigationItem" title="GIF Detail" id="577-gM-cLi">
                         <barButtonItem key="rightBarButtonItem" systemItem="action" id="Mze-2Z-wsd">
@@ -96,10 +172,13 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="gifView" destination="Caa-Pp-OVX" id="Q2T-DK-8yY"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JtT-ER-29q" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1068" y="-56"/>
+            <point key="canvasLocation" x="1068" y="-57"/>
         </scene>
     </scenes>
 </document>

@@ -10,6 +10,8 @@
 
 @interface GIFDetailViewController : UIViewController
 
+@property (nonatomic, strong) NSURL *url;
+@property (nonatomic, weak) IBOutlet UIWebView *gifView;
 - (IBAction)shareGIF:(id)sender;
 
 @end
