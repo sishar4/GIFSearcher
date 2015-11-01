@@ -11,9 +11,14 @@
 #import "AXCGiphy.h"
 #import "AXCGiphyImage.h"
 #import "GifCell.h"
+#import <ReactiveCocoa/ReactiveCocoa.h>
+#import "SearchService.h"
 
 @interface ViewController ()
 @property (nonatomic, strong) NSMutableArray *gifsArray;
+@property (nonatomic, strong) NSMutableArray *trendingGifArray;
+@property (nonatomic, assign) BOOL userSearching;
+@property (nonatomic, strong) NSString *currentSearchText;
 @end
 
 @implementation ViewController
@@ -22,9 +27,77 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     
-    self.gifsArray = [[NSMutableArray alloc] init];
-    
     [AXCGiphy setGiphyAPIKey:kGiphyPublicAPIKey];
+    self.gifsArray = [[NSMutableArray alloc] init];
+    self.trendingGifArray = [[NSMutableArray alloc] init];
+    SearchService *sharedSearchService = [SearchService sharedInstance];
+    
+    //SEARCH BAR TEXT DID CHANGE
+    RACSignal *searchTextSignal = self.searchBar.rac_textSignal;
+    [[[[[searchTextSignal throttle:0.4]
+        map:^id(NSString* searchText) {
+            NSLog(@"Text after throttle >> %@", searchText);
+            _currentSearchText = searchText;
+            /*
+             Clicking on clear or emptying search text field will remove GIFs from search
+             and return to list of trending GIFs
+             */
+            if (searchText.length == 0) {
+                _userSearching = NO;
+                [self.gifsArray removeAllObjects];
+                [self.gifsArray addObjectsFromArray:self.trendingGifArray];
+                [self.tableView reloadData];
+                return nil;
+            }
+            
+            return [sharedSearchService search:searchText];
+        }]
+       switchToLatest] deliverOn:RACScheduler.mainThreadScheduler]
+     subscribeNext:^(NSMutableArray* searchResult) {
+         if ([NSThread isMainThread]){
+             NSLog(@"is MainThread");
+             if (_userSearching == NO) {
+                 _userSearching = YES;
+             }
+             [self.gifsArray removeAllObjects];
+             [self.tableView reloadData];
+         }
+         NSLog(@"searchResult count == %lu",(unsigned long)searchResult.count);
+    } error:^(NSError *error) {
+        if ([NSThread isMainThread]) {
+            NSLog(@"ERROR >>>>>>> %@", error.description);
+            UIAlertController *failAlert = [UIAlertController alertControllerWithTitle:@"Could Not Retrieve GIFs" message:@"Failed to retrieve any GIFs. Please try again." preferredStyle:UIAlertControllerStyleAlert];
+            UIAlertAction *removeAlert = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {}];
+            [failAlert addAction:removeAlert];
+            [self presentViewController:failAlert animated:YES completion:nil];
+        }
+    }];
+    
+
+    //SEARCH BAR SEARCH BUTTON CLICKED
+    RACSignal *searchClicked = [self.searchBar rac_signalForSelector:@selector(searchBarSearchButtonClicked:)];
+    [searchClicked subscribeNext:^(id _) {
+        [self.searchBar resignFirstResponder];
+        // Complete the search
+        [self.gifsArray removeAllObjects];
+        [self.gifsArray addObjectsFromArray:sharedSearchService.tempSearchArray];
+        [self.tableView reloadData];
+        NSLog(@"Search Clicked.");
+    }];
+    
+    //SEARCH BAR CANCEL BUTTON CLICKED
+    RACSignal *cancelSearchClicked = [self.searchBar rac_signalForSelector:@selector(searchBarCancelButtonClicked:)];
+    [cancelSearchClicked subscribeNext:^(id _) {
+        if (_currentSearchText.length > 0) {
+            [self.searchBar setText:_currentSearchText];
+        } else {
+            [self.searchBar setText:@""];
+        }
+        [self.searchBar resignFirstResponder];
+        NSLog(@"Search Cancelled.");
+    }];
+
+    
     NSURLRequest *request = [AXCGiphy giphyTrendingRequestWithLimit:25.0 offset:0.0];
     
     [[[NSURLSession sharedSession] dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
@@ -52,6 +125,7 @@
                 
                 NSDictionary *gifs = [[NSDictionary alloc] initWithObjects:@[imgDict, gifDict] forKeys:@[@"image", @"gif"]];
                 [self.gifsArray addObject:gifs];
+                [self.trendingGifArray addObject:gifs];
             }
             
             dispatch_async(dispatch_get_main_queue(), ^{
@@ -145,7 +219,12 @@
     UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(10, 5, tableView.frame.size.width, 30)];
     [label setFont:[UIFont boldSystemFontOfSize:18]];
     [label setTextColor:[UIColor blackColor]];
-    [label setText:@"Trending"];
+    if (!_userSearching) {
+        [label setText:@"Trending"];
+    } else {
+        SearchService *sharedObj = [SearchService sharedInstance];
+        [label setText:[NSString stringWithFormat:@"%lu GIFs for \"%@\"", sharedObj.tempSearchArray.count, _currentSearchText]];
+    }
     [view addSubview:label];
     [view setBackgroundColor:[UIColor whiteColor]];
     return view;

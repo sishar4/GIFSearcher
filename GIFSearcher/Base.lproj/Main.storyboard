@@ -35,13 +35,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="Xqt-Vv-Jmb">
+                            <searchBar contentMode="redraw" placeholder="Search GIFs " showsCancelButton="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Xqt-Vv-Jmb">
                                 <rect key="frame" x="0.0" y="64" width="600" height="44"/>
                                 <animations/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="bIb-56-emD"/>
                                 </constraints>
-                                <textInputTraits key="textInputTraits"/>
+                                <color key="barTintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="search" enablesReturnKeyAutomatically="YES"/>
+                                <connections>
+                                    <outlet property="delegate" destination="cZv-gY-fEr" id="9Kd-kU-B74"/>
+                                </connections>
                             </searchBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="aHe-ak-BSV">
                                 <rect key="frame" x="0.0" y="108" width="600" height="492"/>
@@ -89,6 +93,7 @@
                         <barButtonItem key="backBarButtonItem" title="Back" id="a77-8d-eWt"/>
                     </navigationItem>
                     <connections>
+                        <outlet property="searchBar" destination="Xqt-Vv-Jmb" id="W44-Hl-ena"/>
                         <outlet property="tableView" destination="aHe-ak-BSV" id="4sB-0i-eVZ"/>
                         <segue destination="HCm-Qw-7Ob" kind="show" identifier="showGIFDetail" id="gPJ-8n-OE2"/>
                     </connections>

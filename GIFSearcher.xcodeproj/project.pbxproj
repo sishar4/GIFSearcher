@@ -19,6 +19,8 @@
 		FA54816A1BDC6C2600F7DE51 /* GIFDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA5481691BDC6C2600F7DE51 /* GIFDetailViewController.m */; };
 		FAD1982D1BE3265400375856 /* GifCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAD1982C1BE3265400375856 /* GifCell.xib */; };
 		FAD198311BE326C300375856 /* GifCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FAD198301BE326C300375856 /* GifCell.m */; };
+		FAEADB931BE576E500B622E4 /* UISearchBar+RAC.m in Sources */ = {isa = PBXBuildFile; fileRef = FAEADB921BE576E500B622E4 /* UISearchBar+RAC.m */; };
+		FAEADB961BE58B5500B622E4 /* SearchService.m in Sources */ = {isa = PBXBuildFile; fileRef = FAEADB951BE58B5500B622E4 /* SearchService.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +68,10 @@
 		FAD1982C1BE3265400375856 /* GifCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GifCell.xib; sourceTree = "<group>"; };
 		FAD1982F1BE326C300375856 /* GifCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GifCell.h; sourceTree = "<group>"; };
 		FAD198301BE326C300375856 /* GifCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GifCell.m; sourceTree = "<group>"; };
+		FAEADB911BE576E400B622E4 /* UISearchBar+RAC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UISearchBar+RAC.h"; sourceTree = "<group>"; };
+		FAEADB921BE576E500B622E4 /* UISearchBar+RAC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UISearchBar+RAC.m"; sourceTree = "<group>"; };
+		FAEADB941BE58B5500B622E4 /* SearchService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchService.h; sourceTree = "<group>"; };
+		FAEADB951BE58B5500B622E4 /* SearchService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchService.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -203,6 +209,10 @@
 			children = (
 				FAD1982F1BE326C300375856 /* GifCell.h */,
 				FAD198301BE326C300375856 /* GifCell.m */,
+				FAEADB911BE576E400B622E4 /* UISearchBar+RAC.h */,
+				FAEADB921BE576E500B622E4 /* UISearchBar+RAC.m */,
+				FAEADB941BE58B5500B622E4 /* SearchService.h */,
+				FAEADB951BE58B5500B622E4 /* SearchService.m */,
 			);
 			name = "Custom Objects";
 			sourceTree = "<group>";
@@ -391,9 +401,11 @@
 			files = (
 				FA54816A1BDC6C2600F7DE51 /* GIFDetailViewController.m in Sources */,
 				FA54813D1BDC6A8E00F7DE51 /* ViewController.m in Sources */,
+				FAEADB931BE576E500B622E4 /* UISearchBar+RAC.m in Sources */,
 				FAD198311BE326C300375856 /* GifCell.m in Sources */,
 				FA54813A1BDC6A8E00F7DE51 /* AppDelegate.m in Sources */,
 				FA5481371BDC6A8E00F7DE51 /* main.m in Sources */,
+				FAEADB961BE58B5500B622E4 /* SearchService.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
