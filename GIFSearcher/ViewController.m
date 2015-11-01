@@ -31,6 +31,8 @@
     self.gifsArray = [[NSMutableArray alloc] init];
     self.trendingGifArray = [[NSMutableArray alloc] init];
     SearchService *sharedSearchService = [SearchService sharedInstance];
+    __weak ViewController *weakSelf = self;
+    
     
     //SEARCH BAR TEXT DID CHANGE
     RACSignal *searchTextSignal = self.searchBar.rac_textSignal;
@@ -43,10 +45,10 @@
              and return to list of trending GIFs
              */
             if (searchText.length == 0) {
-                _userSearching = NO;
-                [self.gifsArray removeAllObjects];
-                [self.gifsArray addObjectsFromArray:self.trendingGifArray];
-                [self.tableView reloadData];
+                weakSelf.userSearching = NO;
+                [weakSelf.gifsArray removeAllObjects];
+                [weakSelf.gifsArray addObjectsFromArray:self.trendingGifArray];
+                [weakSelf.tableView reloadData];
                 return nil;
             }
             
@@ -56,11 +58,11 @@
      subscribeNext:^(NSMutableArray* searchResult) {
          if ([NSThread isMainThread]){
              NSLog(@"is MainThread");
-             if (_userSearching == NO) {
-                 _userSearching = YES;
+             if (weakSelf.userSearching == NO) {
+                 weakSelf.userSearching = YES;
              }
-             [self.gifsArray removeAllObjects];
-             [self.tableView reloadData];
+             [weakSelf.gifsArray removeAllObjects];
+             [weakSelf.tableView reloadData];
          }
          NSLog(@"searchResult count == %lu",(unsigned long)searchResult.count);
     } error:^(NSError *error) {
@@ -77,11 +79,11 @@
     //SEARCH BAR SEARCH BUTTON CLICKED
     RACSignal *searchClicked = [self.searchBar rac_signalForSelector:@selector(searchBarSearchButtonClicked:)];
     [searchClicked subscribeNext:^(id _) {
-        [self.searchBar resignFirstResponder];
+        [weakSelf.searchBar resignFirstResponder];
         // Complete the search
-        [self.gifsArray removeAllObjects];
-        [self.gifsArray addObjectsFromArray:sharedSearchService.tempSearchArray];
-        [self.tableView reloadData];
+        [weakSelf.gifsArray removeAllObjects];
+        [weakSelf.gifsArray addObjectsFromArray:sharedSearchService.tempSearchArray];
+        [weakSelf.tableView reloadData];
         NSLog(@"Search Clicked.");
     }];
     
@@ -89,11 +91,11 @@
     RACSignal *cancelSearchClicked = [self.searchBar rac_signalForSelector:@selector(searchBarCancelButtonClicked:)];
     [cancelSearchClicked subscribeNext:^(id _) {
         if (_currentSearchText.length > 0) {
-            [self.searchBar setText:_currentSearchText];
+            [weakSelf.searchBar setText:_currentSearchText];
         } else {
-            [self.searchBar setText:@""];
+            [weakSelf.searchBar setText:@""];
         }
-        [self.searchBar resignFirstResponder];
+        [weakSelf.searchBar resignFirstResponder];
         NSLog(@"Search Cancelled.");
     }];
 
