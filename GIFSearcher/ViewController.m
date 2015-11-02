@@ -102,17 +102,13 @@
     //Get Trending Gifs
     [sharedSearchService getTrendingGifsWithCompletionHandler:^(NSMutableArray *results, BOOL success) {
         if (success) {
-            dispatch_async(dispatch_get_main_queue(), ^{
-                [self.gifsArray addObjectsFromArray:results];
-                [self.tableView reloadData];
-            });
+            [self.gifsArray addObjectsFromArray:results];
+            [self.tableView reloadData];
         } else {
-            dispatch_async(dispatch_get_main_queue(), ^{
-                UIAlertController *failAlert = [UIAlertController alertControllerWithTitle:@"Could Not Retrieve GIFs" message:@"Failed to retrieve any GIFs. Please try again." preferredStyle:UIAlertControllerStyleAlert];
-                UIAlertAction *removeAlert = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {}];
-                [failAlert addAction:removeAlert];
-                [self presentViewController:failAlert animated:YES completion:nil];
-            });
+            UIAlertController *failAlert = [UIAlertController alertControllerWithTitle:@"Could Not Retrieve GIFs" message:@"Failed to retrieve any GIFs. Please try again." preferredStyle:UIAlertControllerStyleAlert];
+            UIAlertAction *removeAlert = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {}];
+            [failAlert addAction:removeAlert];
+            [self presentViewController:failAlert animated:YES completion:nil];
         }
     }];
 }

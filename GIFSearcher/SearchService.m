@@ -126,8 +126,8 @@ typedef void(^CompletedResults)(NSMutableArray *searchResults, NSError *error);
                 
                 NSDictionary *gifs = [[NSDictionary alloc] initWithObjects:@[imgDict, gifDict] forKeys:@[@"image", @"gif"]];
                 [self.trendingGifArray addObject:gifs];
-                completionHandler(self.trendingGifArray, YES);
             }
+            completionHandler(self.trendingGifArray, YES);
         }
         else {
             //show error message
