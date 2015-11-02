@@ -97,4 +97,45 @@ typedef void(^CompletedResults)(NSMutableArray *searchResults, NSError *error);
     }];
 }
 
+- (void)getTrendingGifsWithCompletionHandler:(void (^)(NSMutableArray *, BOOL))completionHandler {
+    
+    NSURLRequest *request = [AXCGiphy giphyTrendingRequestWithLimit:25.0 offset:0.0];
+    
+    [[[NSURLSession sharedSession] dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+        
+        NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *)response;
+        NSLog(@"RESPONSE >>>>>> %@", response);
+        
+        if (!error && httpResponse.statusCode == 200) {
+            NSError *localError;
+            NSDictionary *parsedObject = [NSJSONSerialization JSONObjectWithData:data options:0 error:&localError];
+            NSDictionary *gifData = [parsedObject objectForKey:@"data"];
+            
+            for (NSDictionary *dict in gifData) {
+                NSDictionary *imageDict = [dict objectForKey:@"images"];
+                NSDictionary *imgDict;
+                NSDictionary *gifDict;
+                if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+                    imgDict = [imageDict objectForKey:@"original_still"];
+                    gifDict = [imageDict objectForKey:@"original"];
+                } else {
+                    imgDict = [imageDict objectForKey:@"fixed_height_still"];
+                    gifDict = [imageDict objectForKey:@"fixed_height"];
+                }
+                
+                
+                NSDictionary *gifs = [[NSDictionary alloc] initWithObjects:@[imgDict, gifDict] forKeys:@[@"image", @"gif"]];
+                [self.trendingGifArray addObject:gifs];
+                completionHandler(self.trendingGifArray, YES);
+            }
+        }
+        else {
+            //show error message
+            NSLog(@"ERROR >>>>>>> %@", error.description);
+            completionHandler(nil, NO);
+        }
+        
+    }] resume];
+}
+
 @end

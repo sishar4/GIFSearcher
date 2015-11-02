@@ -99,53 +99,22 @@
         NSLog(@"Search Cancelled.");
     }];
 
-    
-    NSURLRequest *request = [AXCGiphy giphyTrendingRequestWithLimit:25.0 offset:0.0];
-    
-    [[[NSURLSession sharedSession] dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
-        
-        NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *)response;
-        NSLog(@"RESPONSE >>>>>> %@", response);
-        
-        if (!error && httpResponse.statusCode == 200) {
-            NSError *localError;
-            NSDictionary *parsedObject = [NSJSONSerialization JSONObjectWithData:data options:0 error:&localError];
-            NSDictionary *gifData = [parsedObject objectForKey:@"data"];
-            
-            for (NSDictionary *dict in gifData) {
-                NSDictionary *imageDict = [dict objectForKey:@"images"];
-                NSDictionary *imgDict;
-                NSDictionary *gifDict;
-                if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
-                    imgDict = [imageDict objectForKey:@"original_still"];
-                    gifDict = [imageDict objectForKey:@"original"];
-                } else {
-                    imgDict = [imageDict objectForKey:@"fixed_height_still"];
-                    gifDict = [imageDict objectForKey:@"fixed_height"];
-                }
-                
-                
-                NSDictionary *gifs = [[NSDictionary alloc] initWithObjects:@[imgDict, gifDict] forKeys:@[@"image", @"gif"]];
-                [self.gifsArray addObject:gifs];
-                [self.trendingGifArray addObject:gifs];
-            }
-            
+    //Get Trending Gifs
+    [sharedSearchService getTrendingGifsWithCompletionHandler:^(NSMutableArray *results, BOOL success) {
+        if (success) {
             dispatch_async(dispatch_get_main_queue(), ^{
+                [self.gifsArray addObjectsFromArray:results];
                 [self.tableView reloadData];
             });
-        }
-        else {
-            //show error message
+        } else {
             dispatch_async(dispatch_get_main_queue(), ^{
-                NSLog(@"ERROR >>>>>>> %@", error.description);
                 UIAlertController *failAlert = [UIAlertController alertControllerWithTitle:@"Could Not Retrieve GIFs" message:@"Failed to retrieve any GIFs. Please try again." preferredStyle:UIAlertControllerStyleAlert];
                 UIAlertAction *removeAlert = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {}];
                 [failAlert addAction:removeAlert];
                 [self presentViewController:failAlert animated:YES completion:nil];
             });
         }
-        
-    }] resume];
+    }];
 }
 
 #pragma mark - Table View

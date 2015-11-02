@@ -16,5 +16,6 @@
 @property (nonatomic, retain) NSMutableArray *trendingGifArray;
 @property (nonatomic, retain) NSMutableArray *tempSearchArray;
 - (RACSignal *)search:(NSString *)text;
+- (void)getTrendingGifsWithCompletionHandler:(void (^)(NSMutableArray *result, BOOL success))completionHandler;
 
 @end
