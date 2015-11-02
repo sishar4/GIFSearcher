@@ -31,11 +31,10 @@ typedef void(^CompletedResults)(NSMutableArray *searchResults, NSError *error);
         self.tempSearchArray = [[NSMutableArray alloc] init];
     }
     [self.tempSearchArray removeAllObjects];
-    NSMutableArray *results = [[NSMutableArray alloc] init];
     
-    // Here you should to do your network call and and return the response string
+
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-//        [NSThread sleepForTimeInterval:2.5];
+
         NSURLRequest *request = [AXCGiphy giphySearchRequestForTerm:text limit:100.0 offset:0.0];
         
         [[[NSURLSession sharedSession] dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
@@ -62,12 +61,11 @@ typedef void(^CompletedResults)(NSMutableArray *searchResults, NSError *error);
                     
                     
                     NSDictionary *gifs = [[NSDictionary alloc] initWithObjects:@[imgDict, gifDict] forKeys:@[@"image", @"gif"]];
-                    [results addObject:gifs];
                     [self.tempSearchArray addObject:gifs];
                 }
-                
+                //return array of gifs for the search term
                 if (handler){
-                    handler(results, nil);
+                    handler(self.tempSearchArray, nil);
                 }
             }
             else {
@@ -127,6 +125,7 @@ typedef void(^CompletedResults)(NSMutableArray *searchResults, NSError *error);
                 NSDictionary *gifs = [[NSDictionary alloc] initWithObjects:@[imgDict, gifDict] forKeys:@[@"image", @"gif"]];
                 [self.trendingGifArray addObject:gifs];
             }
+            //return the array of trending gifs
             completionHandler(self.trendingGifArray, YES);
         }
         else {

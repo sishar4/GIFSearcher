@@ -16,7 +16,6 @@
 
 @interface ViewController ()
 @property (nonatomic, strong) NSMutableArray *gifsArray;
-@property (nonatomic, strong) NSMutableArray *trendingGifArray;
 @property (nonatomic, assign) BOOL userSearching;
 @property (nonatomic, strong) NSString *currentSearchText;
 @end
@@ -29,12 +28,15 @@
     
     [AXCGiphy setGiphyAPIKey:kGiphyPublicAPIKey];
     self.gifsArray = [[NSMutableArray alloc] init];
-    self.trendingGifArray = [[NSMutableArray alloc] init];
     SearchService *sharedSearchService = [SearchService sharedInstance];
+    
+    //Weak reference to self for use in blocks for ReactiveCocoa
     __weak ViewController *weakSelf = self;
     
-    
-    //SEARCH BAR TEXT DID CHANGE
+    /*
+     Signal to handle when search bar
+     text did change
+     */
     RACSignal *searchTextSignal = self.searchBar.rac_textSignal;
     [[[[[searchTextSignal throttle:0.4]
         map:^id(NSString* searchText) {
@@ -47,7 +49,7 @@
             if (searchText.length == 0) {
                 weakSelf.userSearching = NO;
                 [weakSelf.gifsArray removeAllObjects];
-                [weakSelf.gifsArray addObjectsFromArray:self.trendingGifArray];
+                [weakSelf.gifsArray addObjectsFromArray:sharedSearchService.trendingGifArray];
                 [weakSelf.tableView reloadData];
                 return nil;
             }
@@ -76,18 +78,23 @@
     }];
     
 
-    //SEARCH BAR SEARCH BUTTON CLICKED
+    /*
+     Signal to handle when search bar
+     Search button clicked
+     */
     RACSignal *searchClicked = [self.searchBar rac_signalForSelector:@selector(searchBarSearchButtonClicked:)];
     [searchClicked subscribeNext:^(id _) {
         [weakSelf.searchBar resignFirstResponder];
-        // Complete the search
-        [weakSelf.gifsArray removeAllObjects];
+        // Complete the search and update the table view
         [weakSelf.gifsArray addObjectsFromArray:sharedSearchService.tempSearchArray];
         [weakSelf.tableView reloadData];
         NSLog(@"Search Clicked.");
     }];
     
-    //SEARCH BAR CANCEL BUTTON CLICKED
+    /*
+     Signal to handle when search bar
+     Cancel button clicked
+     */
     RACSignal *cancelSearchClicked = [self.searchBar rac_signalForSelector:@selector(searchBarCancelButtonClicked:)];
     [cancelSearchClicked subscribeNext:^(id _) {
         if (_currentSearchText.length > 0) {
@@ -182,7 +189,10 @@
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
 {
     UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, tableView.frame.size.width, 40)];
-    /* Create custom view to display section header... */
+    /* 
+     Create custom view to display section header
+     Text is updated when user is typing in search bar
+     */
     UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(10, 5, tableView.frame.size.width, 30)];
     [label setFont:[UIFont boldSystemFontOfSize:18]];
     [label setTextColor:[UIColor blackColor]];
