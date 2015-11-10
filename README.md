@@ -1,7 +1,7 @@
 # GIFSearcher
 
 iPhone and iPad App that shows trending GIF's using Giphy API.
-User can view, search and share GIF's.
+User can view, search and share GIF's. Uses ReactiveCocoa programming.
 
 To Install:
 
